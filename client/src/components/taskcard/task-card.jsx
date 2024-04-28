@@ -4,17 +4,17 @@ import Card from 'react-bootstrap/Card';
 import './task-card.css'
 
 
-const TaskCard = ({task}) => {
+const TaskCard = ({task,onClick}) => {
     const {title,description} = task;
     
   return (
-    <Card >
+    <Card className="card-main" onClick={onClick}  >
     <Card.Body>
-      <Card.Title>{title}</Card.Title>
+      <Card.Title className="card-title">{title}</Card.Title>
+      <hr />
       <Card.Text>
-       {description}
+       <p className="card-description">{description}</p>
       </Card.Text>
-      <Button variant="primary">Delete</Button>
     </Card.Body>
   </Card>
 );

@@ -15,5 +15,13 @@
     display: flex;
     justify-content: space-between;
   }
-
+  .section-box-header button{
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color .3s ease, transform .3s ease;
+  }
+  .section-box-header button:hover {
+    background-color: rgb(124, 192, 124);
+    transform: scale(1.1);
+  }
   
