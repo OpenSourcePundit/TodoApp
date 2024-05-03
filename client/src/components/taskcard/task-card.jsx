@@ -18,7 +18,7 @@ const TaskCard = ({task,onClick,index}) => {
       <Card.Title className="card-title">{title}</Card.Title>
       <hr />
       <Card.Text>
-       <p className="card-description">{description}</p>
+       <span className="card-description">{description}</span>
       </Card.Text>
     </Card.Body>
   </Card>

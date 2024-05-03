@@ -15,7 +15,12 @@
   
   .body {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr) ;
+  }
+  SectionBox{
+    max-width: 33.33%;
+    background-color: aqua;
+    border: 5px black;
   }
  
   

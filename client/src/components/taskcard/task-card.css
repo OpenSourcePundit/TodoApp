@@ -4,6 +4,7 @@
     transition: transform 0.3s ease;
     cursor: pointer;
     cursor: grab;
+
 }
 .card-main:active{
     opacity: 0.8;
@@ -14,8 +15,10 @@
     text-decoration: underline;
     text-align: left;
 }
-.card-description{
+.card-description,Text{
     text-align: left;
+    text-wrap: wrap;
+    overflow-x: auto; 
 }
 .card-main:hover{
     transform: scale(1.1);
