@@ -5,7 +5,7 @@ import { sections} from '../../utils/constants'
 const AppWrapper = () => {    
   return (
     <div className="container">
-    <header className="header">Header</header>
+    <header className="header">TO DO App</header>
     <div className="body">
         {sections?.map((sec,index)=><SectionBox key={index} head={sec.head}/>)}
     </div>

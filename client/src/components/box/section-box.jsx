@@ -13,8 +13,10 @@ const SectionBox = ({head}) => {
   const [showModal, setShowModal] = useState(false); //to toggle modal
   
 
-  const handleCardClick = ({title, description}) => {
-    setActiveCard({ title, description });
+  const handleCardClick = (e,{title, description,status,id}) => {
+    e.preventDefault()
+   
+    setActiveCard({ title, description,status,id });
     setShowModal(true);
   };
   const handleCloseModal = () => {
@@ -26,12 +28,13 @@ const SectionBox = ({head}) => {
     <div className="section-box"   >
         <div className="section-box-header">
             <h5>{head}</h5>
-            <button onClick={()=>handleCardClick({title:"",description:""})}>Add</button>
+            <button onClick={(e)=>handleCardClick(e,{title:"",description:"",status:head})}>Add</button>
         </div>
+        <hr />
         <div className="section-box-body">
           <DropZone status={head} dropPosition={0}/>
-          {tasks?.map((task,index)=>task.status===head && <TaskCard key={index} index={index} task={task} onClick={()=>handleCardClick(task)} />)}
-          {<TodoModal show={showModal} handleClose={handleCloseModal} title={activeCard?.title} description={activeCard?.description}         />}
+          {tasks?.map((task,index)=>task.status===head && <TaskCard key={index} index={index} task={task} onClick={(e)=>handleCardClick(e,task)} />)}
+          {<TodoModal show={showModal} handleClose={handleCloseModal} title={activeCard?.title} description={activeCard?.description} status={activeCard?.status}        />}
 
         </div>
 
