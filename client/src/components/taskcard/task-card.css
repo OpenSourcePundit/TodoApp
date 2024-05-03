@@ -15,10 +15,15 @@
     text-decoration: underline;
     text-align: left;
 }
-.card-description,Text{
+.card-description{
     text-align: left;
-    text-wrap: wrap;
-    overflow-x: auto; 
+}
+.card-text,.card-title{
+    margin-bottom: 0;
+    text-overflow: ellipsis;
+    width: 370px;
+    white-space: nowrap;
+    overflow: hidden;
 }
 .card-main:hover{
     transform: scale(1.1);
