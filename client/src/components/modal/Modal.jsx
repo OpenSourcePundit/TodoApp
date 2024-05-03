@@ -26,7 +26,9 @@ function TodoModal({show, handleClose, title, description,status}) {
   const handleSave = () =>{
     if (validateForm()) {
       dispatch({type:"ADD_TASK",payload:{...input}})
+      handleClose();
     }
+    
   }
   const handleDelete = (id) =>{
 

@@ -7,6 +7,7 @@ export const dataReducer = (state, { type, payload }) => {
             const { title, description } = payload;
             const newObj = { id:uuidv4(), title, description, status};
             updatedArray = [...state.tasks, newObj];
+            localStorage.setItem('tasks', JSON.stringify(updatedArray));
                     return { ...state, tasks: updatedArray };
            
             
@@ -16,16 +17,15 @@ export const dataReducer = (state, { type, payload }) => {
             const updatedTasks = state.tasks.filter((task, index) =>
                 index !== activeCardIndex)
             updatedTasks.splice(dropPosition, 0, {...activeCard, status: status })
-
-
+            localStorage.setItem('tasks', JSON.stringify(updatedTasks));
             return { ...state, tasks: updatedTasks };
 
         case "DELETE_TASK":
                 const {id} = payload;
                 const updatedTasks1 = state.tasks.filter((task, index) =>
-                    id !== task.id)                
+                    id !== task.id)          
     
-    
+                    localStorage.setItem('tasks', JSON.stringify(updatedTasks1));
                 return { ...state, tasks: updatedTasks1 };
 
 
